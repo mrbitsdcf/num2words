@@ -47,7 +47,7 @@ class Num2Word_Base(object):
                ['high_numwords', 'mid_numwords', 'low_numwords']):
             self.cards = OrderedDict()
             self.set_numwords()
-            self.MAXVAL = 1000 * list(self.cards.keys())[0]
+            self.MAXVAL = 1000000000 * list(self.cards.keys())[0]
 
     def set_numwords(self):
         self.set_high_numwords(self.high_numwords)

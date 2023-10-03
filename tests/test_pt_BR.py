@@ -30,6 +30,7 @@ class Num2WordsPTBRTest(TestCase):
         self.n2w = Num2Word_PT_BR()
 
     def test_cardinal_integer(self):
+        print(num2words(122990400000000000000000000000, lang='pt_BR'))
         self.assertEqual(num2words(1, lang='pt_BR'), 'um')
         self.assertEqual(num2words(2, lang='pt_BR'), 'dois')
         self.assertEqual(num2words(3, lang='pt_BR'), 'três')

@@ -39,7 +39,11 @@ class Num2Word_PT_BR(lang_PT.Num2Word_PT):
             6: "milionésimo",
             9: "bilionésimo",
             12: "trilionésimo",
-            15: "quadrilionésimo"
+            15: "quadrilionésimo",
+            18: "quintilionésimo",
+            21: "sextilionésimo",
+            24: "septilionésimo",
+            27: "oitilionésimo"
         }
 
     def merge(self, curr, next):
@@ -76,7 +80,8 @@ class Num2Word_PT_BR(lang_PT.Num2Word_PT):
         # reais"
         for ext in (
                 'mil', 'milhão', 'milhões', 'bilhão', 'bilhões',
-                'trilhão', 'trilhões', 'quatrilhão', 'quatrilhões'):
+                'trilhão', 'trilhões', 'quatrilhão', 'quatrilhões',
+                'quintilhões', 'sextilhões', 'septilhões', 'oitilhões'):
             if re.match('.*{} e \\w*entos? (?=.*e)'.format(ext), result):
                 result = result.replace(
                     '{} e'.format(ext), '{},'.format(ext), 1
@@ -92,7 +97,8 @@ class Num2Word_PT_BR(lang_PT.Num2Word_PT):
         appended_currency = False
         for ext in (
                 'milhão', 'milhões', 'bilhão', 'bilhões',
-                'trilhão', 'trilhões', 'quatrilhão', 'quatrilhões'):
+                'trilhão', 'trilhões', 'quatrilhão', 'quatrilhões',
+                'quintilhões', 'sextilhões', 'septilhões', 'oitilhões'):
             if result.endswith(ext):
                 result += ' de reais'
                 appended_currency = True
